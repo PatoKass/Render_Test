@@ -52,11 +52,6 @@ app.get('/api/persons/:id', (req, res, next) => {
     .catch((error) => next(error))
 })
 
-// app.get('/info', (req, res) => {
-//   res.send(`<div>Phonebook has info for ${entries.length} people</div>
-//   <div>${new Date()} </div>`)
-// })
-
 app.post('/api/persons', (req, res, next) => {
   console.log(req.body)
   const body = req.body
@@ -79,11 +74,6 @@ app.post('/api/persons', (req, res, next) => {
 
 app.put('/api/persons/:id', (req, res, next) => {
   const { name, number } = req.body
-
-  // const person = {
-  //   name: name,
-  //   number: number,
-  // }
 
   Person.findByIdAndUpdate(
     req.params.id,
